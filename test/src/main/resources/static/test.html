@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var prefix = 'http://localhost:8080';
+
+        var ajax1 = new XMLHttpRequest();
+        ajax1.onreadystatechange = function () {
+            if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                console.log(this.responseText);
+            }
+        }
+        ajax1.open('GET', prefix + '/set?x=22');
+        ajax1.send();
+
+        // 2nd request
+        var ajax2 = new XMLHttpRequest();
+        ajax2.onreadystatechange = function () {
+            if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                console.log(this.responseText);
+            }
+        }
+        ajax2.open('GET', prefix + '/get');
+        ajax2.send();
+    </script>
+</body>
+
+</html>

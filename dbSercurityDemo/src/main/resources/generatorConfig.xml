@@ -1,0 +1,23 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3DynamicSql">
+        <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
+                        connectionURL="jdbc:mariadb://localhost/demo_db"
+                        userId="test"
+                        password="maxwit">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.demo.sercurity.dao.model" targetProject="src/main/java"/>
+
+        <javaClientGenerator targetPackage="com.demo.sercurity.dao.mapper" targetProject="src/main/java"/>
+
+        <table tableName="user" domainObjectName="UserDO" mapperName="UserMapper" >
+            <columnOverride column="enabled" jdbcType="BOOLEAN" javaType="Boolean"/>
+            <columnOverride column="locked" jdbcType="BOOLEAN" javaType="Boolean"/>
+        </table>
+        <table tableName="role" domainObjectName="RoleDO" mapperName="RoleMapper" />
+        <table tableName="user_role" domainObjectName="RoleUserDO" mapperName="RoleUserMapper" />
+    </context>
+</generatorConfiguration>
