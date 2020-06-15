@@ -6,9 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     public String index(String username) {
         return "Hello , " + username;
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+
+        return "success";
     }
 
 }
