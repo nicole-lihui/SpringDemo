@@ -22,7 +22,7 @@ public class Send {
 
             channel.queueDeclare(QUEUE_NAME, true, false, false, null);
             String message = "Hello World DD message!";
-            
+
 //            message not persistent
 //            channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
 
